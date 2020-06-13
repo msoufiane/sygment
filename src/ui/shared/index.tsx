@@ -1,4 +1,4 @@
+import PageWrapper from './pageWrapper';
 import Theme from './themeFile';
 import ToolBarDivider from './toolBarDivider';
-
-export { Theme, ToolBarDivider };
+export { Theme, ToolBarDivider, PageWrapper };

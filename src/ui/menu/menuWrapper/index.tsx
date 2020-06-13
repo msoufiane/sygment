@@ -1,8 +1,7 @@
-import React from 'react';
-
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import Drawer from '@material-ui/core/Drawer';
+import React from 'react';
 import { ToolBarDivider } from '../../shared';
 
 interface MenuWrapperProps {
@@ -30,7 +29,7 @@ export const MenuWrapper: React.FC<MenuWrapperProps> = props => {
       variant="temporary"
       className={classes.drawer}
       classes={{ paper: classes.drawerPaper }}
-      open={true}
+      open={false}
     >
       <ToolBarDivider />
       {props.children}

@@ -1,11 +1,15 @@
+import { Header, Menu, PageWrapper } from '../ui';
+
 import React from 'react';
-import { Header, Menu } from '../ui';
 
 function Routes() {
     return (
         <React.Fragment>
             <Header />
             <Menu />
+            <PageWrapper>
+                Soufiane
+            </PageWrapper>
         </React.Fragment>
     );
 }
