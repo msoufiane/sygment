@@ -3,4 +3,4 @@ import Menu from './menu';
 import PageWrapper from './shared/pageWrapper';
 import { Theme } from './shared';
 
-export { Theme, Header, Menu, PageWrapper }
+export { Theme, Header, Menu, PageWrapper };

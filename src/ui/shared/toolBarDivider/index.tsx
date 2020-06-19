@@ -1,6 +1,6 @@
-import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
-
 import React from 'react';
+
+import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'flex-end',
       ...theme.mixins.toolbar,
     },
-  }),
+  })
 );
 
 const ToolBarDivider: React.FC = () => {

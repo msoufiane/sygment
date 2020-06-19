@@ -1,17 +1,15 @@
-import { Header, Menu, PageWrapper } from '../ui';
-
 import React from 'react';
 
+import { Header, Menu, PageWrapper } from '../ui';
+
 function Routes() {
-    return (
-        <React.Fragment>
-            <Header />
-            <Menu />
-            <PageWrapper>
-                Soufiane
-            </PageWrapper>
-        </React.Fragment>
-    );
+  return (
+    <>
+      <Header />
+      <Menu />
+      <PageWrapper>Soufiane</PageWrapper>
+    </>
+  );
 }
 
 export default Routes;

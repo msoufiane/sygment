@@ -1,16 +1,9 @@
-import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
-
-import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import React from 'react';
-import SecondaryMenu from '../../secondaryMenu';
-import ToolBarDivider from '../toolBarDivider';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+
+import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 
 interface PageWrapperProps {
   children?: React.ReactNode;
@@ -18,52 +11,31 @@ interface PageWrapperProps {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    appBarSpacer: theme.mixins.toolbar,
     content: {
       flexGrow: 1,
-      padding: theme.spacing(3)
-    }
+      height: '100vh',
+      overflow: 'auto',
+    },
+    container: {
+      paddingTop: theme.spacing(4),
+      paddingBottom: theme.spacing(4),
+    },
   })
 );
 
-const PageWrapper: React.FC<PageWrapperProps> = props => {
+const PageWrapper: React.FC<PageWrapperProps> = (props) => {
   const classes = useStyles();
 
   return (
     <React.Fragment>
-      <SecondaryMenu>
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </SecondaryMenu>
-
-      <main>
-        <ToolBarDivider />
-        <Toolbar>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <Typography variant="h6">Kubernetes</Typography>
-        </Toolbar>
-        <Divider />
-        <div className={classes.content}>{props.children}</div>
+      <main className={classes.content}>
+        <div className={classes.appBarSpacer} />
+        <Container maxWidth="lg" className={classes.container}>
+          <Grid container spacing={3}>
+            {props.children}
+          </Grid>
+        </Container>
       </main>
     </React.Fragment>
   );
